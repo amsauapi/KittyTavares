@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://cdpn.io/ethanryan/fullpage/zpPxaR -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<link rel="icon" href="ktlogo.png">
+
+<title>Kitty Tavares - Tic-Tac-Toe, v3</title>
+  
+  
+  
+  
+<style>
+  html {
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  }
+body {
+  background: url(../imagens/010_Kitty_.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: black;
+  font-family: Helvetica, Aria, sans-serif;
+}
+
+.bodyClassic {
+  background-color: azure;
+  background: url(../imagens/010_Kitty_.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.bodyGoth {
+  background-color: gray;
+  background: url(../imagens/010_Kitty_.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.bodyWeapons {
+  background-color: red;
+  background: url(../imagens/010_Kitty_.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.infoContainer {
+  display: grid;
+  grid-gap: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-template-columns: 33% 33% 33%;
+  text-align: center;
+}
+
+.infoBox {
+  background-color: lightgray;
+  color: black;
+  padding: 10px;
+  border: 5px solid transparent;
+}
+
+.gameContainer {
+  display: grid;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  //background-color: azure;
+  //border: 5px solid blue;
+  text-align: center;
+}
+
+.gameContainer > .blue {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  font-size: 48px;
+}
+
+.gameContainer > .red {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  font-size: 48px;
+}
+
+.gameContainer > .gray {
+  background-color: gray;
+  color: purple;
+  padding: 20px;
+  font-size: 48px;
+}
+
+.gameContainer > div {
+  border: 2px solid blue;
+  border-radius: 25px;
+  background-color: lightgray;
+  padding: 35px;
+  color: green;
+}
+
+.center {
+  text-align: center;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.orangeBorder {
+  border: 5px solid orange;
+}
+
+.classicHeader {
+  font-style: normal;
+  color: black;
+}
+
+.gothHeader {
+  font-style: italic;
+  color: white;
+  text-shadow: 5px 5px 10px purple;
+}
+
+.weaponsHeader {
+  font-style: normal;
+  color: green;
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+}
+
+.yellowBig {
+  background-color: yellow;
+  font-size: 36px;
+}
+
+.redBig {
+  background-color: red;
+  font-size: 36px;
+}
+
+.red {
+  background-color: red;
+}
+
+#resetButton {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  border: 2px solid blue;
+}
+
+#resetButton:hover {
+  background-color: white;
+  color: blue;
+}
+
+.displayNone {
+  display: none;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+@media (max-width: 799px) {
+  body {
+    background: url(../imagens/004_Kitty.jpg);
+   /* background-color: azure;*/
+     color: white;
+    font-family: Helvetica, Aria, sans-serif;
+  }
+
+  .bodyClassic {
+    background-color: azure;
+    background: url(../imagens/004_Kitty.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .bodyGoth {
+    background-color: gray;
+    background: url(../imagens/004_Kitty.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .bodyWeapons {
+    background-color: red;
+    background: url(../imagens/004_Kitty.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" class="bodyClassic">
+  <h1 id="header" class="center classicHeader">
+Tic-Tac-Toe
+</h1>
+
+<h3>
+<div id="gameStyle" class="center">classic</div>
+</h3>
+
+<h3>
+<form id="playerForm" class="center">
+<div>
+Choose your game style:
+<br><br>
+</div>
+
+ <fieldset id="group1">
+    <input type="radio" name="group1" value="classic" checked="checked">Classic
+    <input type="radio" name="group1" value="goth">Goth
+    <input type="radio" name="group1" value="weapons">Weapons
+ </fieldset>
+
+<br><br>
+
+<div>
+Would you like to be X or O?
+<br><br>
+</div>
+
+  
+<fieldset id="group2">
+  <input type="radio" name="group2" value="X">X
+  <input type="radio" name="group2" value="O">O
+</fieldset>
+
+</form>
+</h3>
+
+<h3>
+<div id="playerOne" class="center"></div>
+</h3>
+
+<div id="gameResult" class="center"></div>
+<div id="congratsOrSorry" class="center"></div>
+
+<section id="gameInfo" class="infoContainer displayNone">
+  <div id="yourTurn" class="infoBox yellow orangeBorder">your turn</div>
+  <button id="resetButton" class="infoBox">Reset Game</button>
+  <div id="compTurn" class="infoBox">computer's turn</div>
+</section>
+
+<div id="counter" class="center displayNone"></div>
+
+<section id="gameGrid" class="gameContainer displayNone">
+  <div class="item item-1" id="one">X/O</div>
+  <div class="item item-2" id="two">X/O</div>
+  <div class="item item-3" id="three">X/O</div>
+
+  <div class="item item-4" id="four">X/O</div>
+  <div class="item item-5" id="five">X/O</div>
+  <div class="item item-6" id="six">X/O</div>
+
+  <div class="item item-7" id="seven">X/O</div>
+  <div class="item item-8" id="eight">X/O</div>
+  <div class="item item-9" id="nine">X/O</div>
+</section>
+    <script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js.download"></script>
+
+  <script src="./jquery.min.js.download"></script>
+  
+      <script id="rendered-js">
+function clickButton(event) {
+  $(".item").click(function (event) {
+    var thingClicked = this.innerHTML;
+    console.log("0. this is: ", this);
+    console.log("0. you clicked: ", thingClicked);
+    var playerOne = getPlayerOne();
+    var gameStyle = getGameStyle();
+    console.log('FIX THIS: ***** clickButton gameStyle: ', gameStyle);
+
+    if (playerOne === "X" && gameStyle === "classic") {
+      $(this).addClass("blue");
+      $(this).html("X");
+    }
+    if (playerOne === "X" && gameStyle === "goth") {
+      $(this).addClass("blue");
+      $(this).html("☠️");
+    }
+    if (playerOne === "X" && gameStyle === "weapons") {
+      $(this).addClass("blue");
+      $(this).html("⚔️");
+    }
+
+    if (playerOne === "O" && gameStyle === "classic") {
+      $(this).addClass("blue");
+      $(this).html("O");
+    }
+    if (playerOne === "O" && gameStyle === "goth") {
+      $(this).addClass("blue");
+      $(this).html("💀");
+    }
+    if (playerOne === "O" && gameStyle === "weapons") {
+      $(this).addClass("blue");
+      $(this).html("💣");
+    }
+
+    playGame(); //call playGame after every click, to check for winner & whose turn
+  });
+}
+clickButton(event);
+
+
+function checkWhoseTurn() {//for this game, playerOne goes first
+  var currentTurn;
+  var redCount = getRedCount();
+  var blueCount = getBlueCount();
+  var playerOneTurn = !blueCount || redCount > blueCount || blueCount && redCount == blueCount;
+  var computerTurn = redCount < blueCount;
+  if (playerOneTurn) {
+    console.log("checkWhoseTurn: it is playerOne's turn");
+    var notBlueOrRed = document.querySelectorAll("div.item:not(.blue):not(.red)");
+    $(notBlueOrRed).removeClass('unclickable');
+    $("#compTurn").removeClass('yellow orangeBorder');
+    $("#yourTurn").addClass('yellow orangeBorder');
+    currentTurn = "playerOneTurn";
+    return currentTurn;
+  }
+  if (computerTurn) {
+    console.log("checkWhoseTurn: it is computer's turn");
+    var allItems = document.querySelectorAll("div.item");
+    $(allItems).addClass('unclickable'); //need to remove this on playerOne's turn
+    $("#yourTurn").removeClass('yellow orangeBorder');
+    $("#compTurn").addClass('yellow orangeBorder');
+    setTimeout(computerTakeTurn, 1000); //call after 1 second...
+    currentTurn = "computerTurn";
+    return currentTurn;
+  }
+}
+
+
+function computerTakeTurn() {
+  var computer = getComputer();
+  console.log('computerTakeTurn: computer is: ', computer);
+  var notBlueOrRed = document.querySelectorAll("div.item:not(.blue):not(.red)");
+  console.log('computerTakeTurn: notBlueOrRed: ', notBlueOrRed);
+  //choose one at random
+  var randomItem = notBlueOrRed[Math.floor(Math.random() * notBlueOrRed.length)];
+  console.log('computerTakeTurn: randomItem is: ', randomItem);
+  //addClass red to that random item and show computer chose it
+  $(randomItem).addClass("red unclickable");
+  $(randomItem).html(computer);
+  console.log('computerTakeTurn: computer clicked: ', randomItem);
+  playGame();
+}
+
+
+function setGameStyle() {
+  $("#playerForm #group1 input").on("change", function () {
+    var gameStyle = $("input[name='group1']:checked", "#playerForm").val();
+    console.log(`game style selected: ${gameStyle}`);
+    $("#gameStyle").html(gameStyle);
+    changeStyle();
+  });
+}
+setGameStyle();
+
+function getGameStyle() {
+  if (document.getElementById("gameStyle") != null) {
+    var gameStyle = document.getElementById("gameStyle").innerHTML;
+    console.log("gameStyle is:::: ", gameStyle);
+    return gameStyle;
+  }
+}
+
+function setPlayerOne() {
+  $("#playerForm #group2 input").on("change", function () {
+    var playerOne = $("input[name='group2']:checked", "#playerForm").val();
+    console.log(`player selected: ${playerOne}`);
+    $("#playerForm").addClass("displayNone");
+    $("#playerOne").html(`You are: <span id="playerOneSpan" class="yellow">${playerOne}</span>`);
+    $("#gameInfo, #resetButton, #gameGrid").removeClass("displayNone");
+  });
+}
+setPlayerOne();
+
+
+function getPlayerOne() {
+  if (document.getElementById("playerOneSpan") != null) {
+    var playerOne = document.getElementById("playerOneSpan").innerHTML;
+    return playerOne;
+  }
+}
+
+
+function getComputer() {
+  var playerOne = getPlayerOne();
+  var gameStyle = getGameStyle();
+  //var computer = (playerOne === "X") ? ("O") : ("X")
+
+  var computer;
+  if (gameStyle === "classic") {
+    computer = playerOne === "X" ? "O" : "X";
+  }
+  if (gameStyle === "goth") {
+    computer = playerOne === "X" ? "💀" : "☠️";
+  }
+  if (gameStyle === "weapons") {
+    computer = playerOne === "X" ? "💣" : "⚔️";
+  }
+
+  console.log("getComputer: computer is: ", computer);
+  return computer;
+}
+
+
+function hardResetOnclick(event) {//returns user to form, asking X or O
+  $("#resetButton").click(function (event) {
+    console.log("hardResetOnclick: resetting game...");
+    $("#playerForm").removeClass("displayNone");
+    document.getElementById("playerForm").reset();
+    styleClassic();
+    $("#playerOne, #gameResult, #congratsOrSorry").html("");
+    $("#gameInfo, #gameGrid, #congratsOrSorry").addClass("displayNone");
+    $(".item").removeClass("blue red gray unclickable");
+    $(".item").html("X/O");
+  });
+}
+hardResetOnclick();
+
+
+function reset() {//resets game for new game
+  console.log("reset: resetting game, for new game...");
+  $("#gameInfo").removeClass("displayNone");
+  $("#gameResult, #congratsOrSorry").addClass("displayNone");
+  $(".item").removeClass("blue red gray unclickable");
+  $(".item").html("X/O");
+}
+
+
+function getRedCount() {
+  var redCount = $('#gameGrid .red').length;
+  return redCount;
+}
+
+function getBlueCount() {
+  var blueCount = $('#gameGrid .blue').length;
+  return blueCount;
+}
+
+
+function checkForWinner() {
+  console.log("checking for winner...");
+  var winner;
+
+  var eightWinningCombos = [
+  "#one.COLOR, #two.COLOR, #three.COLOR",
+  "#four.COLOR, #five.COLOR, #six.COLOR",
+  "#seven.COLOR, #eight.COLOR, #nine.COLOR",
+  "#one.COLOR, #four.COLOR, #seven.COLOR",
+  "#two.COLOR, #five.COLOR, #eight.COLOR",
+  "#three.COLOR, #six.COLOR, #nine.COLOR",
+  "#one.COLOR, #five.COLOR, #nine.COLOR",
+  "#seven.COLOR, #five.COLOR, #three.COLOR"];
+
+
+  var blueWinArray = getWinningArray(eightWinningCombos, "blue");
+  var redWinArray = getWinningArray(eightWinningCombos, "red");
+  var blueWins = blueWinArray.includes(true);
+  var redWins = redWinArray.includes(true);
+  var fullGrid = getRedCount() + getBlueCount();
+  var draw = fullGrid === 9 && !blueWins && !redWins;
+
+  if (blueWins) {//playerOne is always blue
+    playerOneWins();
+    return winner = blueWins;
+  }
+  if (redWins) {//red is computer
+    computerWins();
+    return winner = redWins;
+  }
+  if (draw) {
+    drawGame();
+    return winner = draw;
+  } else {
+    console.log('game on...');
+  }
+}
+
+function getWinningArray(array, string) {
+  return array.map(function (combo) {
+    var eachCombo = combo.replace(/COLOR/g, string);
+    return eachCombo = $(eachCombo).length === 3;
+  });
+}
+
+function playerOneWins() {
+  var playerOne = getPlayerOne();
+  console.log(`${playerOne} wins!`);
+  $("#gameResult").html(`<span class='yellowBig'>${playerOne} wins!</span>`);
+  $("#congratsOrSorry").html("<span class='yellow'>Congratulations! You won!</span>");
+  winLoseOrDraw();
+}
+
+function computerWins() {
+  var computer = getComputer();
+  console.log(`${computer} wins!`);
+  $("#gameResult").html(`<span class='redBig'>${computer} wins!</span>`);
+  $("#congratsOrSorry").html("<span class='red'>Sorry, you lost.</span>");
+  winLoseOrDraw();
+}
+
+function drawGame() {
+  console.log('Draw game!');
+  $("#gameResult").html(`<span class='redBig'>Game is a draw.</span>`);
+  $("#congratsOrSorry").html("<span>Game ended in a draw.</span>");
+  winLoseOrDraw();
+}
+
+function winLoseOrDraw() {
+  $("#gameResult, #congratsOrSorry").removeClass("displayNone");
+  $("#gameInfo").addClass("displayNone");
+  disableRemainingItems();
+}
+
+function disableRemainingItems() {
+  var notBlueOrRed = document.querySelectorAll("div.item:not(.blue):not(.red)");
+  $(notBlueOrRed).addClass("gray");
+  $(notBlueOrRed).html("🤷");
+  $(notBlueOrRed).addClass("unclickable");
+  return;
+}
+
+
+//use gradients for backgrounds instead of simple colors...
+function changeStyle() {
+  var body = document.body;
+  var gameStyle = getGameStyle();
+  if (gameStyle === "classic") {
+    styleClassic();
+  }
+  if (gameStyle === "goth") {
+    styleGoth();
+  }
+  if (gameStyle === "weapons") {
+    styleWeapons();
+  }
+}
+changeStyle();
+
+
+function styleClassic() {
+  var body = document.body;
+  $("#gameStyle").html("classic");
+  $("#header").addClass("classicHeader").removeClass("gothHeader weaponsHeader");
+  $(body).addClass("bodyClassic").removeClass("bodyGoth bodyWeapons");
+}
+
+function styleGoth() {
+  var body = document.body;
+  $("#gameStyle").html("goth");
+  $("#header").addClass("gothHeader").removeClass("classicHeader weaponsHeader");
+  $(body).addClass("bodyGoth").removeClass("bodyClassic bodyWeapons");
+}
+
+function styleWeapons() {
+  var body = document.body;
+  $("#gameStyle").html("weapons");
+  $("#header").addClass("weaponsHeader").removeClass("classicHeader gothHeader");
+  $(body).addClass("bodyWeapons").removeClass("bodyGoth bodyClassic");
+}
+
+function playGame() {
+  console.log('play game!');
+  var winner = checkForWinner();
+  if (!winner) {
+    console.log('no winner yet...');
+    checkWhoseTurn();
+  }
+  if (winner) {
+    console.log('game over, resetting game');
+    setTimeout(reset, 3000); //call reset after 3 seconds...
+  }
+}
+playGame();
+//# sourceURL=pen.js
+    </script>
+
+</body>
+</html>
