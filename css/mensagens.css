@@ -1,0 +1,148 @@
+.img {
+  color: white;
+  height: 350px;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  margin: 15px 15px;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: transform 2s;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+  -moz-osx-font-smoothing: grayscale; 
+  -webkit-font-smoothing: antialiased;
+  -o-font-smoothing: grayscale;
+  font-smoothing: grayscale; 
+
+  line-height: 1.5;
+}
+
+.img1 {
+  background: url(../img%20screen/img1.png);
+  background-size: cover;
+}
+
+.img2 {
+  background: url(../img%20screen/img2.png);
+  background-size: cover;
+}
+
+.img3 {
+  background: url(../img%20screen/img3.png);
+  background-size: cover;
+}
+
+.img4 {
+  background: url(../img%20screen/img4.png);
+  background-size: cover;
+}
+
+.img6 {
+  background: url(../img%20screen/img6.png);
+  background-size: cover;
+}
+
+.img8 {
+  background: url(../img%20screen/img8.png);
+  background-size: cover;
+}
+
+.img11 {
+  background: url(../img%20screen/img11.png);
+  background-size: cover;
+}
+
+.img12 {
+  background: url(../img%20screen/img12.png);
+  background-size: cover;
+}
+
+.img14 {
+  background: url(../img%20screen/img14.png);
+  background-size: cover;
+}
+
+.img17 {
+  background: url(../img%20screen/img17.png);
+  background-size: cover;
+}
+
+.msgs {
+  padding-top: 20px;
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
+
+.img p, .img h3 {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 5px 5px 5px;
+  margin: 0;
+}
+
+.msgs h3 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  height: 20%;
+  padding-top: 15px;
+  padding-bottom: 0;
+}
+
+.img p {
+  height: 80%;
+}
+
+@media (max-width: 766px) {
+  body {
+    overflow-x: hidden;
+  }
+  .img4, .img14, 
+  .img17, .img8 {
+    display: none;
+  }
+
+  .msgs {
+    padding: auto 10px;
+    margin-bottom: 50px;
+  }
+
+  .img {
+    margin: 10px 15px;
+  }
+    /* tipografia */
+  h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+  .btn-custom {
+    color: white;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    -o-border-radius: 500px;
+    padding: 10px 35px;
+    margin: 10px 15px;
+    text-transform: uppercase;
+    transition: background 0.4s, color 0.4s;
+  }
+}

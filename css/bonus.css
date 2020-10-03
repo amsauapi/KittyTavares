@@ -1,0 +1,149 @@
+.msgs {
+	padding-bottom: 15px;
+	box-sizing: border-box;
+	margin-bottom: 100px;
+	padding-top: 50px;
+	background-color: white !important;
+}
+
+.msgs h3 {
+	color: #7c25f8;
+	margin-bottom: 35px;
+	margin-left: 10px;
+}
+
+.extracto {
+	width: 400px;
+	height: 300px;
+	border: 2px solid white;
+	background-image: url(../sunset/sun4.jpg);
+	animation: extracto 30s ease-out 4s infinite normal none;
+	-webkit-animation: extracto 30s ease-out 4s infinite normal none;
+	-o-animation: extracto 30s ease-out 4s infinite normal none;
+	-moz-animation: extracto 30s ease-out 4s infinite normal none;
+	-ms-animation: extracto 30s ease-out 4s infinite normal none;
+	-ms-zoom-animation: extracto 30s ease-out 4s infinite normal none;	
+}
+
+@keyframes extracto {
+	0% {
+		background-image: url(../sunset/sun4.jpg);
+	}
+	17% {
+		background-image: url(../sunset/sun3.jpg);
+	}
+	34% {
+		background-image: url(../sunset/sun5.jpg);
+	}
+	51% {
+		background-image: url(../sunset/sun6.jpg);
+	}
+	68% {
+		background-image: url(../sunset/sun2.jpg);
+	}
+	85% {
+		background-image: url(../sunset/sun1.jpg);
+	}
+}
+@-webkit-keyframes extracto {
+	0% {
+		background-image: url(../sunset/sun4.jpg);
+	}
+	17% {
+		background-image: url(../sunset/sun3.jpg);
+	}
+	34% {
+		background-image: url(../sunset/sun5.jpg);
+	}
+	51% {
+		background-image: url(../sunset/sun6.jpg);
+	}
+	68% {
+		background-image: url(../sunset/sun2.jpg);
+	}
+	85% {
+		background-image: url(../sunset/sun1.jpg);
+	}
+}
+@-moz-keyframes extracto {
+	0% {
+		background-image: url(../sunset/sun4.jpg);
+	}
+	17% {
+		background-image: url(../sunset/sun3.jpg);
+	}
+	34% {
+		background-image: url(../sunset/sun5.jpg);
+	}
+	51% {
+		background-image: url(../sunset/sun6.jpg);
+	}
+	68% {
+		background-image: url(../sunset/sun2.jpg);
+	}
+	85% {
+		background-image: url(../sunset/sun1.jpg);
+	}
+}
+@-o-keyframes extracto {
+	0% {
+		background-image: url(../sunset/sun4.jpg);
+	}
+	17% {
+		background-image: url(../sunset/sun3.jpg);
+	}
+	34% {
+		background-image: url(../sunset/sun5.jpg);
+	}
+	51% {
+		background-image: url(../sunset/sun6.jpg);
+	}
+	68% {
+		background-image: url(../sunset/sun2.jpg);
+	}
+	85% {
+		background-image: url(../sunset/sun1.jpg);
+	}
+}
+
+.tictac {
+	margin: 10px 5px;
+	padding: 10px 10px;
+	box-sizing: content-box;
+	background-color: #ddd;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.tictac img {
+	border: 2px solid white;
+	border-radius: 140999px;
+	-webkit-border-radius: 140999px;
+	-moz-border-radius: 140999px;
+	-ms-border-radius: 140999px;
+	-o-border-radius: 140999px;
+}
+
+.jogo a img, 
+.jogo a p {
+	margin: 0 10px;
+}
+
+.jogo a p {
+	font-size: 22px;
+}
+
+.anjodourado, .tictac {
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+[controls] {
+	margin: 10px 0;
+}

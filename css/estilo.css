@@ -1,0 +1,204 @@
+/* Layout */
+html {
+  height: 100%;
+}
+
+body {
+  background: url('../imagens/010_KittCopia.png') no-repeat,
+              linear-gradient(45deg, #f90, #7c25f8, #f90);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: Helvetica, Aria, sans-serif;
+}
+
+/* ----  Barra de navegaçã0 ---- */
+.img-logo {
+    height: 40px;
+    width: 132px;
+    display: block;
+    background-image: url('../imagens/kt_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+nav.navbar-transparente {
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+.divisor {
+    width: 1px;
+    height: 16px;
+    background-color: white;
+    margin: 16px 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: rgb(184, 103, 11);
+}
+
+/*imagem capa */
+
+.capa {
+    display: table;
+    width: 100%;
+    height: 100vh;
+}
+
+.texto-capa {
+    text-align: center;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* botões */
+.btn-custom {
+    color: white;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    -o-border-radius: 500px;
+    -ms--o-border-radius: 500px;
+    padding: 10px 35px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    transition: background 0.4s, color 0.4s;
+}
+
+.btn-orange {
+    background-color: #7c25f8;
+}
+
+.btn-branco {
+    border: 2px solid white; 
+}
+
+.btn-orange:hover {
+    background-color:  #6207e3;
+    color: white;
+}
+
+.btn-branco:hover {
+    border: 2px solid white;
+    background-color: white;
+    color: #333;
+}
+
+/* serviços */
+#servicos {
+  background: white;
+  padding: 20px  0; 
+}
+
+#servicos-two {
+  padding: 20px  0;
+  color: white;
+}
+
+.albuns {
+  padding: 10px 0;
+}
+
+/* rodape */
+footer {
+  background-color: #000;
+  padding: 50px 0 20px 0;
+  position: relative;
+}
+
+footer .col-md-10 {
+  text-align: right;
+  padding-top: 20px;
+}
+
+footer .col-md-10 a {
+  color: white;
+}
+
+/* tipografia */
+h1 {
+  font-size: 100px;
+  color: white;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+#servicos h2, #servicos h3 {
+  color: #7c25f8;
+}
+
+.tHPr, .tHPc {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .margem {
+    margin: 5px auto;
+  }
+  .post, .post1, .post3, .post2 {
+    margin: 5px auto;
+    display: block;
+  }
+  .post {
+    width: 160px;
+  }
+  .post1 {
+    width: 350px;
+  }
+  .post2 {
+    width: 400px;
+  }
+  .post3 {
+    width: 450px;
+  }
+}
+
+@media (max-width: 799px) {
+  body {
+    background: url('../imagens/009_KittyCopia.png') no-repeat,
+                linear-gradient(45deg, #f90, #7c25f8, #f90);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  h1 {
+    font-size: 22px;
+    color: white;
+    font-weight: 450;
+    letter-spacing: -0.05em;
+    margin-bottom: 25px;
+  }
+}
+.bordaLilas {
+  border: 1px solid #7c25f8;
+}
+
+.bordaBrancas {
+  border: 1px solid #fff;
+}
