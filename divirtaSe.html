@@ -126,6 +126,7 @@
         watchable1.style.display = "block"; //apresenta o video thousand year
 
         watchable2.style.display = "none";  //esconde o video do putin
+        callPlayer('xyz', 'abc');
         watchable2.pause();                 //pausa o video do putin
 
         watchable3.style.display = "none";  //esconde o video hardest part
@@ -148,9 +149,26 @@
 
         watchable2.style.display = "none";  //esconde o video do putin
         watchable2.pause();                 //pausa o video do putin
+        callPlayer('xyz', 'abc');
 
         watchable3.style.display = "block";  //apresenta o video hardest part
-      } 
+      }
+        
+      function callPlayer(func, args) {
+      var i = 0,
+        iframes = document.getElementsByTagName('iframe'),
+        src = '';
+      for (i = 0; i < iframes.length; i += 1) {
+        src = iframes[i].getAttribute('src');
+        if (src && src.indexOf('youtube.com/embed') !== -1) {
+            iframes[i].contentWindow.postMessage(JSON.stringify({
+                'event': 'command',
+                'func': func,
+                'args': args || []
+            }), '*');
+         }
+       }
+    }
     </script>
 </body>
 </html>
